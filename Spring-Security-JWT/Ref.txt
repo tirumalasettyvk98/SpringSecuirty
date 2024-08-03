@@ -1,0 +1,28 @@
+https://jwt.io/
+
+HEADER:ALGORITHM & TOKEN TYPE
+
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+PAYLOAD:DATA
+
+{
+  "sub": "1234567890",  -->Subject is user ,  who  actually got authenticated
+  "name": "John Doe",
+  "iat": 1516239022
+} ----> claims is payload
+
+
+
+
+VERIFY SIGNATURE
+
+HMACSHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+
+your-256-bit-secret
+
+) secret base64 encoded

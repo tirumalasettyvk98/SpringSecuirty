@@ -1,0 +1,27 @@
+spring:
+  application:
+      name: Spring-Security-JPA
+
+
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/SpringSecurity
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+
+server:
+    port: 9091
+
+
+
+

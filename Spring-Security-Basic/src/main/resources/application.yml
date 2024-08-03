@@ -1,0 +1,11 @@
+spring:
+  application:
+      name: Spring-Security-App
+#  security:
+#    user:
+#      name: vamsi
+#      password: vamsi
+
+server:
+    port: 9090
+
