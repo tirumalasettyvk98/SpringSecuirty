@@ -52,7 +52,11 @@ public class JwtUtil {
         return createToken(claims, userDetails.getUsername());
     }
 
-    private String createToken(Map<String, Object> claims, String subject) {
+    private String createToken(Map<String, Object> claims, String subject)
+    {
+        // claims are payload
+        // subject is the person who got authenticated
+
         return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 1000*60*30))
                 .signWith(SignatureAlgorithm.HS256, SECRETKEY).compact(); // compact base64

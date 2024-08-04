@@ -35,7 +35,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-            http.csrf().disable()
+            http.csrf().disable() // app to app security breach to avoid 
                     .authorizeRequests()
                     .antMatchers("/auth").permitAll()
                     .antMatchers("/validate").permitAll()
@@ -57,6 +57,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
     @Bean
+    // i am taking control on auth manager so creating bean
     public AuthenticationManager authenticationManagerBean() throws Exception
     {
        return  super.authenticationManagerBean();

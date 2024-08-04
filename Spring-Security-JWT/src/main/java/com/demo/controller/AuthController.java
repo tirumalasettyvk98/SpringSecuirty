@@ -43,7 +43,7 @@ public class AuthController {
         UsernamePasswordAuthenticationToken token =
                 new UsernamePasswordAuthenticationToken(authenticationRequest.getUserName(),authenticationRequest.getPassword());
 
-        authenticationManager.authenticate(token);
+        authenticationManager.authenticate(token); // if it is successful then only execute next line
 
        UserDetails userDetails= userDetailsService.loadUserByUsername(authenticationRequest.getUserName());
 
